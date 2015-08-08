@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stopwatch</string>
+    <string name="timer">00:00:00</string>
+    <string name="timerMs">.0</string>
+    <string name="startText">Start</string>
+    <string name="resetText">Reset</string>
+    <string name="stopText">Stop</string>
+    <string name="backgroundText">Stopwatch</string>
+    <string name="adsText">Ads Go Here</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6058611707562553/4593048425</string>
+</resources>
