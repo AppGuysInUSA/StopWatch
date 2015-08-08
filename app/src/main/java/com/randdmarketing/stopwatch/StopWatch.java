@@ -10,7 +10,11 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
-//import com.google.ads.*;
+
+import com.google.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
@@ -25,7 +29,6 @@ import android.widget.LinearLayout;
 public class StopWatch extends Activity{
     /** Called when the activity is first created. */
 
-//    AdView adView;
     private TextView tempTextView; //Temporary TextView
     private Button tempBtn; //Temporary Button
     private Handler mHandler = new Handler();
@@ -44,11 +47,9 @@ public class StopWatch extends Activity{
         setContentView(R.layout.main);
 
 
-/*        adView = new AdView(this, AdSize.BANNER,"ca-app-pub-6058611707562553/4593048425");
-        LinearLayout layout = (LinearLayout)findViewById(R.id.adsLayout);
-        layout.addView(adView);
-        adView.loadAd(new AdRequest());
-*/
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         checkScreenDensity();
@@ -76,7 +77,6 @@ public class StopWatch extends Activity{
 
     @Override
     public void onDestroy() {
-//        adView.destroy();
         super.onDestroy();
     }
 
@@ -204,14 +204,14 @@ public class StopWatch extends Activity{
             timer.setTextSize(TypedValue.COMPLEX_UNIT_SP, 90);
             TextView timerMs = (TextView) findViewById(R.id.timerMs);
             timerMs.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
-            ((LinearLayout) findViewById(R.id.adsLayout)).setVisibility(View.GONE);
+            ((LinearLayout) findViewById(R.id.adView)).setVisibility(View.GONE);
         }
         else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             TextView timer = (TextView) findViewById(R.id.timer);
             timer.setTextSize(TypedValue.COMPLEX_UNIT_SP, 70);
             TextView timerMs = (TextView) findViewById(R.id.timerMs);
             timerMs.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
-            ((LinearLayout) findViewById(R.id.adsLayout)).setVisibility(View.VISIBLE);
+            ((LinearLayout) findViewById(R.id.adView)).setVisibility(View.VISIBLE);
         }
     }
 
