@@ -10,8 +10,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.ads.AdSize;
+//import com.google.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.AdRequest;
 
@@ -173,6 +172,7 @@ public class StopWatch extends Activity{
         if(milliseconds.length()==2){
             milliseconds = "0"+milliseconds;
         }
+
         if(milliseconds.length()<=1){
             milliseconds = "00";
         }
