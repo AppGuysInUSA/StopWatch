@@ -39,6 +39,7 @@ public class StopWatch extends Activity{
     private long secs,mins,hrs,msecs;
     private boolean stopped = false;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -71,7 +72,6 @@ public class StopWatch extends Activity{
         tempBtn.setTypeface(font);
 
     }
-
 
 
     @Override
@@ -176,7 +176,7 @@ public class StopWatch extends Activity{
         if(milliseconds.length()<=1){
             milliseconds = "00";
         }
-        milliseconds = milliseconds.substring(milliseconds.length()-3, milliseconds.length()-2);
+        milliseconds = milliseconds.substring(milliseconds.length()-2, milliseconds.length());
 
 		/* Setting the timer text to the elapsed time */
         ((TextView)findViewById(R.id.timer)).setText(hours + ":" + minutes + ":" + seconds);
